@@ -1,0 +1,16 @@
+<div class="gridxMain" role="presentation">
+	<div class="gridxBodyEmpty" role="alert" tabindex="-1" ng-show='renderedRows.length === 0'>this is the empty body</div>
+	<div class="gridxBody" role="presentation" tabindex="0" ng-class="{gridxBodyRowHoverEffect: grid.enableRowHoverEffect}">
+		<div aui-grid-row ng-repeat='row in renderedRows' row="row"></div>
+	</div>
+	<div class="gridxVScroller" aui-grid-v-scroller tabindex="-1">
+		<div style='width: 1px;'></div>
+	</div>
+	<div class="gridxRowHeaderBody" ng-show="{{grid.hasRowHeader}}" ng-style="{width: headerWidth}" style="padding-bottom: 100px">
+		<div ng-repeat="row in renderedRows" class="gridxRowHeaderRow" ng-class="{'gridxRowOver':isRowOver}" ng-mouseenter="isRowOver=true" ng-mouseleave="isRowOver=false" role="row" visualindex="{{row.visualIndex()}}" rowid="{{row.id}}" parentid="{{row.parent()}}" aria-selected="false">
+			<table role="presentation" border="0" cellspacing="0" cellpadding="0" ng-style="{height: row.height}">
+				<tbody><tr><td ng-class="{'gridxRowHeaderCellOver':isCellOver, 'gridxCellFocus':isCellFocused}" ng-mouseenter="isCellOver=true" ng-mouseleave="isCellOver=false" ng-focus="isCellFocused=true" ng-blur="isCellFocused=false" class="gridxRowHeaderCell" role="rowheader" tabindex="-1" aria-label=""></td></tr></tbody>
+			</table>
+		</div>
+	</div>
+</div>

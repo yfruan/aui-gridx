@@ -1,0 +1,20 @@
+<!-- <div class="gridxRow" role="row" visualindex="{{row.visualindex}}" rowid="{{row.id}}" parentid="{{row.parentid}}">
+	<table class="gridxRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0">
+		<tbody>
+			<tr>
+			<td aria-readonly='true' role='gridcell' tabindex='-1' ng-repeat='col in columns' class='gridxCell' aui-grid-cell field="col.field" row="row" col-id="col.id" col="col" ng-class="{gridxCellFocus: false}"></td>
+			</tr>
+		</tbody>
+	</table>
+</div> -->
+
+<div class="gridxRow" role="row" visualindex="{{row.visualIndex()}}" rowid="{{row.id}}" parentid="{{row.parent()}}">
+	<table class="gridxRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0">
+		<tbody>
+			<tr>
+			<td aria-readonly='true' role='gridcell' tabindex='-1' ng-repeat='col in columns' class='gridxCell' aui-grid-cell colid="{{col.id}}" colindex="{{col.index}}" col="col">
+			</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
